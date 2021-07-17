@@ -1,12 +1,12 @@
 {
   "pages": [
     
-    "pages/mine/index",
+    "pages/addcom/index",
     "pages/home/index",
     "pages/school/index",
-    "pages/addcom/index",
+    
     "pages/advertising/index",
-
+    "pages/mine/index",
     "pages/userxuzhi/index",
     "pages/detail/index"
     
