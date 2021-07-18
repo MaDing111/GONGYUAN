@@ -1,0 +1,82 @@
+<form bindsubmit="submit">
+<view class="imgbox">
+  <!-- 存放上传的图片的盒子 -->
+  <block wx:for="{{images}}" wx:key="this">
+    <view class="add">
+      <!-- 图片缩略图  -->
+      <image src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+      <!-- 移除图片的按钮  -->
+      <view class="delete" data-idx="{{index}}" bindtap="removeImage">
+        <view class="icon-box">
+          <view class="icon-small-wrp">
+            <icon class="icon-small" type="cancel" size="23"></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view style="height:100px" wx:if="{{images.length<9}}">
+    <view>
+      <image src="{{url}}" bindtap="chooseImage"  style="width：50px;height:60px;margin-top:10px"></image>
+    </view>
+    <text class="addtex">添加图片</text>
+  </view>
+</view>
+<view class="addtltle">
+  <view class="titleone">
+    <text>标题</text>
+    <input  name="title" type="text" placeholder="请输入宝贝名称，品牌型号等" />
+  </view>
+  <textarea name="describe" class="area" maxlength="100" placeholder="描述你的宝贝，如品牌、规格、成色、购买渠道、转手原因等"/>
+  <view class="titleone">
+  <text>分类</text>
+  <view class="section">
+  <picker  name="sort" bindchange="bindPickerChange" value="{{array[index]}}" range="{{array}}">
+    <view class="picker">
+      --{{array[index]}}--
+    </view>
+  </picker>
+</view>
+</view>
+<view class="titleone">
+  <text>方式</text>
+  <radio-group name="way" class="radios">
+          <label><radio value="自取"/>自取</label>
+          <label><radio disabled="true" value="跑腿"/>跑腿</label>
+          <label><radio value="邮寄"/>邮寄</label>
+        </radio-group>
+</view>
+<view class="titleone">
+  <text>发布地</text>
+  <input  name="place" type="text" placeholder="例如：五号楼5A642"/>
+</view>
+<view class="titleone">
+  <text>原价</text>
+  <input name="oldprice" type="number" placeholder="原价是多少元"/>
+  <text>元</text>
+</view>
+<view class="titleone">
+  <text>想卖</text>
+  <input name="price" type="number" placeholder="想卖多少元"/>
+  <text>元</text>
+</view>
+<view class="titleone">
+  <text>微信</text>
+  <input name="wechat" type="text" placeholder="请输入微信号"/>
+</view>
+<view class="titleone">
+  <text>手机</text>
+  <input name="phonenumber" type="number" placeholder="请输入手机号"/>
+</view>
+</view>
+<view class="s">
+  <checkbox  name="s">
+    <checkbox-group style="color:rgb(124, 119, 119)">阅读并同意</checkbox-group>
+  </checkbox>
+  <a style="color:#6b97da;" bindtap="xuzhi">《发布须知》</a>
+</view>
+
+<view class="sumbutton">
+  <button form-type="submit" bindtap="submitt" class="sumbutton">确认发布</button>
+</view>
+</form>
