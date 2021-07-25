@@ -1,0 +1,11 @@
+<!--pages/school/index.wxml-->
+<view class="content">
+    <swiper circular="true" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" indicator-active-color="white"
+      duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item.lun2}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
