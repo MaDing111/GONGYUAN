@@ -1,0 +1,3 @@
+<view class="content" wx:for="{{srleList}}">
+<image src="{{item.lun}}"></image>
+</view>

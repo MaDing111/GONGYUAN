@@ -1,0 +1,9 @@
+/* pages/discount/index.wxss */
+page {
+  background: rgb(239, 239, 244);
+  font-size: 13px;
+}
+.content image{
+width: 100%;
+height: 130px;
+}

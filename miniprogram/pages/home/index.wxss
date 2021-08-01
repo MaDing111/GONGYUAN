@@ -1,0 +1,131 @@
+page {
+  background: rgb(239, 239, 244);
+  font-size: 13px;
+}
+.content {
+  height: 100%;
+  width: 100%;
+}
+swiper {
+  height: 400rpx;
+  width: 100%;
+}
+swiper-item {
+  height: 100%;
+  width: 100%;
+}
+.slide-image {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.into {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+
+}
+
+.into view {
+  width: 48%;
+  height: 80px;
+  text-align: center;
+  justify-content: space-between;
+  line-height: 80px;
+  border-radius: 5px;
+}
+.into view:first-child{
+background-color: rgb(177, 212, 221);
+}
+.into view:nth-child(2){
+  background-color: rgb(243, 215, 250);
+}
+.hot {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  line-height: 40px;
+}
+.hottext{
+
+  width: 50px;
+  height: 50px;
+
+}
+.hotgoods {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.onegood {
+  width: 48%;
+  height: 230px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.goodimage {
+  height: 150px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.price{
+  margin-top: 10px;
+  border-bottom: 1px solid rgb(219, 215, 215);
+  display: flex;
+  justify-content: space-between;
+}
+.bigtex{
+  margin-left: 8px;
+}
+.may{
+  color: red;
+  margin-left: 8px;
+  margin-bottom: 5px;
+}
+.looked{
+  color: rgb(204, 201, 201);
+  margin-right: 5px;
+  font-size: 12px;
+}
+.userara{
+  display: flex;
+  margin-left: 8px;
+}
+.nam{
+  margin-left: 5px;
+  margin-top: 4px;
+}
+.ara{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.hotpeng{
+  margin-top: 8px;
+  width: 95%;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.addbtn image{
+  width: 50px;
+  height: 50px;
+}
+.movarea{
+width: 375px;
+height: 550px;
+
+}
+.moview{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 999;
+}

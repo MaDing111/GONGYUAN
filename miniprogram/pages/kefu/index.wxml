@@ -1,0 +1,16 @@
+<!--pages/kefu/index.wxml-->
+<view>
+<view>
+<text>
+需投放广告请加客服微信
+</text>
+</view>
+<view>
+<text>
+客服微信:MX011724
+</text>
+</view>
+<view>
+<image src="{{imgurl}}"></image>
+</view>
+</view>

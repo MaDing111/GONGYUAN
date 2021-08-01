@@ -1,0 +1,73 @@
+/* pages/lost/index.wxss */
+page {
+  background: rgb(239, 239, 244);
+  font-size: 13px;
+}
+.content{
+  background-color: white;
+  padding: 0 10px;
+  
+  border-bottom: 1px solid #c6c6c6;
+}
+.header{
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+}
+.userimage{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.namedate{
+  margin-left: 10px;
+}
+.userimage image{
+  width: 40px;
+  height: 40px;
+}
+.images{
+  margin-top: 20px;
+}
+.body{
+  margin-top: 10px;
+}
+.images image{
+width: 100px;
+height: 100px;
+margin-left: 10px;
+}
+.footer{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  
+}
+.zan image{
+  width: 20px;
+  height: 20px;
+  margin-right:5px ;
+}
+.zan text{
+  color: #c6c6c6;
+}
+.zan1 text{
+  color: #eb3131;
+}
+.zan1 image{
+  width: 20px;
+  height: 20px;
+  margin-right:5px ;
+}
+.addbtn image{
+  width: 50px;
+  height: 50px;
+}
+.addbtn{
+  position: fixed;
+  top: 10px;
+  left: 300px;
+  z-index: 999;
+}
+

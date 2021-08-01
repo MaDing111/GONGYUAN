@@ -1,0 +1,98 @@
+<!--pages/detail/index.wxml-->
+<block wx:if="{{logining}}">
+<view class="tologin"><text>请先前往 我的 登录
+</text>
+</view>
+
+</block>
+<block wx:else>
+<view class="content">
+  <view class="ti">
+    <view class="top">
+      <view class="biaoti">
+        <text style="flex:1">{{detailList.title}}</text>
+      </view>
+      <view class="price">
+        ￥<text class="newprice">{{detailList.price}}</text><text class="oldprice">{{detailList.oldprice}}</text><text class="way">{{detailList.way}}</text><text class="way">{{detailList.ways}}</text>
+      </view>
+      <view class="jing">
+      <text>本价格是指买卖双方约定的线下交易价格，本平台不提供交易功能（也不收取任何费用和）。请仔细甄别信息，如遇不法侵害请及时报警。
+      </text>
+      </view>
+      <view class="describe">
+        <text
+          class="describes">{{detailList.describe}}</text>
+      </view>
+
+      <view wx:for="{{images}}" wx:key="item">
+        <image src="{{item}}"></image>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="bottom">
+   <view class="a1">
+     <text>微信号：</text><text>{{detailList.wechat}}</text>
+   </view>
+   <view class="a2">
+     <text>手机号：</text><text>{{detailList.phonenumber}}</text>
+   </view>
+   <view class="a2">
+     <text>发布地：</text><text>{{detailList.place}}</text>
+   </view>
+
+  </view>
+  <view class="word">
+    <view class="footer">
+      <text>共评论{{detailList.message.length}}</text>
+    </view>
+    <view wx:for="{{detailList.message}}">
+      <view class="messages-one">
+        <view class="userava">
+          <image class="userava" src="{{item.user.avatarUrl}}"></image>
+        </view>
+        <view>{{item.user.nickName}}</view><text>:{{item.messages}}</text>
+      </view>
+
+    </view>
+  </view>
+  <view class="loves">
+     <text>- -❤猜你喜欢- -</text>
+  </view>
+   <view class="hotgoods" >
+  <view class="onegood" wx:for="{{likeList}}" wx:key="item" data-id="{{item._id}}" bindtap="details">
+      <image class="goodimage" src="{{item.images[0]}}"></image>
+      <view>
+        <text class="bigtex" style="flex: 1">{{item.title}}</text>
+      </view>
+      <view class="price1">
+        <text class="may" style="flex: 1">￥{{item.price}}</text>
+        <text class="looked">{{item.rmcp}}人看过</text>
+      </view>
+      <view class="userara">
+        <view>
+        <!-- item.avatarUrl -->
+          <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+        </view>
+        <view class="nam">
+        <!-- item.nickName -->
+          <text>{{item.userInfo.nickName}}</text>
+        </view>
+      </view>
+    </view>
+</view>
+</view>
+</block>
+<view wx:if="{{onoff}}" class="foot">
+      <view class="say">
+        <view class="flex">
+          <image class="say_img" src="../../images/say.png"></image>
+          <input confirm-type="send" class="say_inp" placeholder="评论点什么.." bindconfirm="send"></input>
+        </view>
+      </view>
+      <image class="foot_img" src="../../images/message.png"></image>
+      <text class="foot_num">{{item.message.length}}</text>
+      <image class="foot_img2" src="{{zanimg}}" bindtap="dianzan" data-id="{{item._id}}" data-zan="{{item.zan}}"></image>
+      <text class="foot_num" bindtap="dianzan"  data-id="{{item._id}}" data-zan="{{item.zan}}">{{item.zan}}</text>
+    </view>
