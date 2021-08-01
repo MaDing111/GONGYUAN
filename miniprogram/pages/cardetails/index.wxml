@@ -1,0 +1,51 @@
+<!--pages/details/index.wxml-->
+<view>
+  <view class="content" wx:for="{{lostList}}">
+    <view class="header">
+      <view class="userimage">
+        <image class="userimage" src="{{item.userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="namedate">
+        <view class="username"><text>{{item.userInfo.nickName}}</text></view>
+        <view class="userdate"><text>{{item.time}}</text></view>
+      </view>
+    </view>
+    <view class="body" bindtap="todetails" data-id="{{item._id}}">
+      <view class="textfont">
+        <text>{{item.describe}}</text>
+      </view>
+      <view class="images">
+        <image wx:for="{{item.images}}" src="{{item}}"></image>
+      </view>
+    </view>
+    <view class="footer">
+      <text>共评论{{item.message.length}}</text>
+    </view>
+    <view wx:for="{{item.message}}">
+      <view class="messages-one">
+        <view class="userava">
+          <image class="userava" src="{{item.user.avatarUrl}}"></image>
+        </view>
+        <view>{{item.user.nickName}}</view><text>:{{item.messages}}</text>
+      </view>
+
+    </view>
+    <!-- 底部评论 -->
+<block wx:if="{{onoff}}">
+    <view class="foot">
+      <view class="say">
+        <view class="flex">
+          <image class="say_img" src="../../images/say.png"></image>
+          <input confirm-type="send" class="say_inp" placeholder="评论点什么.." bindconfirm="send"></input>
+        </view>
+      </view>
+      <image class="foot_img" src="../../images/message.png"></image>
+      <text class="foot_num">{{item.message.length}}</text>
+      <image class="foot_img2" src="{{zanimg}}" bindtap="dianzan" data-id="{{item._id}}" data-zan="{{item.zan}}"></image>
+      <text class="foot_num" bindtap="dianzan"  data-id="{{item._id}}" data-zan="{{item.zan}}">{{item.zan}}</text>
+    </view>
+  </block>
+  </view>
+
+
+</view>

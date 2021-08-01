@@ -1,0 +1,37 @@
+<view>
+  <view class="content" wx:for="{{lostList}}">
+    <view class="header">
+      <view class="userimage">
+        <image class="userimage" src="{{item.userInfo.avatarUrl}}"></image>
+      </view>
+      <view class="namedate">
+        <view class="username"><text>{{item.userInfo.nickName}}</text></view>
+        <view class="userdate"><text>{{item.time}}</text></view>
+      </view>
+    </view>
+    <view class="body" bindtap="todetails" data-id="{{item._id}}" data-me="{{item.message}}">
+      <view class="textfont">
+        <text>{{item.describe}}</text>
+      </view>
+      <view class="images">
+        <image wx:for="{{item.images}}" src="{{item}}"></image>
+      </view>
+    </view>
+    <view class="footer">
+      <view class="zan" bindtap="todetails" data-id="{{item._id}}">  
+          <image src="../../images/like1.png"></image><text>赞{{item.zan}}</text>
+      </view>
+      <view wx:if="{{onoff}}" class="zan" bindtap="todetails" data-id="{{item._id}}">
+        <image src="../../images/message.png"></image><text>评论{{item.message.length}}</text>
+      </view>
+      <view class="zan">
+        <image src="../../images/share.png"></image><text>分享</text>
+      </view>
+    </view>
+
+  </view>
+</view>
+<block wx:if="{{onoff}}">
+  <view class="addbtn" bindtap="toaddcom">
+  <image src="../../images/write.png"></image>
+</view></block>

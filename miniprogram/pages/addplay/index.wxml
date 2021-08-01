@@ -1,0 +1,41 @@
+<block wx:if="{{onoff}}">
+<block wx:if="{{logining}}">
+<view class="tologin">
+<text>请先前往 我的 登录
+</text>
+</view>
+</block>
+
+<block wx:else>
+<form bindsubmit="submit">
+  <view class="imgbox">
+    <!-- 存放上传的图片的盒子 -->
+    <block wx:for="{{images}}" wx:key="this">
+      <view class="add">
+        <!-- 图片缩略图  -->
+        <image src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+        <!-- 移除图片的按钮  -->
+        <view class="delete" data-idx="{{index}}" bindtap="removeImage">
+          <view class="icon-box">
+            <view class="icon-small-wrp">
+              <icon class="icon-small" type="cancel" size="23"></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view style="height:100px" wx:if="{{images.length<9}}">
+      <view>
+        <image src="{{url}}" bindtap="chooseImage" style="width：50px;height:60px;margin-top:10px"></image>
+      </view>
+      <text class="addtex">添加图片</text>
+    </view>
+  </view>
+  <view class="addtltle">
+    <textarea name="describe" class="area" maxlength="100" placeholder="发布你的活动，活动时间，活动地点" />
+
+  </view>
+    <button form-type="submit" bindtap="submitt" class=" sumbutton" disabled="{{isOK}}">确认发布</button>
+</form>
+</block>
+</block>

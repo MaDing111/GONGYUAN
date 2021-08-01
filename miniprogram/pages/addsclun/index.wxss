@@ -1,0 +1,35 @@
+/* pages/addlun/index.wxss */
+.lun{
+  height: 100px;
+}
+text{
+  color: red;
+  border: 1px solid red;
+  font-size: 20px;
+}
+.imgbox{
+  width: 100%;
+  min-height: 200rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+}
+.imgbox image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.add{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.delete{
+  font-size: 24rpx;
+  color: #E60000;
+}
+.addtex{
+ margin-left: 18px;
+  color: rgb(220, 219, 219);
+}

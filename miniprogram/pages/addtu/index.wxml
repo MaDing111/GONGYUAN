@@ -1,0 +1,122 @@
+<!--  -->
+<block wx:if="{{onoff}}">
+<view class="nav">
+  <view class="item {{current == '0' ? 'active' : ''}}" catchtap="onClick" data-id="0">折扣</view>
+  <view class="item {{current == '1' ? 'active' : ''}}" catchtap="onClick" data-id="1">吃</view>
+  <view class="item {{current == '2' ? 'active' : ''}}" catchtap="onClick" data-id="2">喝</view>
+</view>
+<view class="list">
+  <block>
+    <view class="detail" wx:if="{{current == '0'}}">
+      <view class="lun" wx:for="{{srleList}}" wx:key="{{index}}">
+        <image class="lun" src="{{item.lun}}"></image>
+        <text bindtap="srledet" data-id="{{item._id}}">删除</text>
+      </view>
+      <view class="imgbox">
+        <!-- 存放上传的图片的盒子 -->
+        <block wx:for="{{images}}" wx:key="this">
+          <view class="add">
+            <!-- 图片缩略图  -->
+            <image src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+            <!-- 移除图片的按钮  -->
+            <view class="delete" data-idx="{{index}}" bindtap="removeImage">
+              <view class="icon-box">
+                <view class="icon-small-wrp">
+                  <icon class="icon-small" type="cancel" size="23"></icon>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view style="height:100px" wx:if="{{images.length<9}}">
+          <view>
+            <image src="{{url}}" bindtap="chooseImage" style="width：50px;height:60px;margin-top:10px"></image>
+          </view>
+          <text class="addtex">添加图片</text>
+        </view>
+      </view>
+      <view>
+        
+        <button bindtap="srlesubmit">
+          提交
+        </button>
+      </view>
+    </view>
+  </block>
+  <block>
+    <view class="detail" wx:if="{{current == '1'}}">
+      <view class="lun" wx:for="{{eatList}}" wx:key="{{index}}">
+        <image class="lun" src="{{item.lun}}"></image>
+        <text bindtap="eatdet" data-id="{{item._id}}">删除</text>
+      </view>
+      <view class="imgbox">
+        <!-- 存放上传的图片的盒子 -->
+        <block wx:for="{{images}}" wx:key="this">
+          <view class="add">
+            <!-- 图片缩略图  -->
+            <image src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+            <!-- 移除图片的按钮  -->
+            <view class="delete" data-idx="{{index}}" bindtap="removeImage">
+              <view class="icon-box">
+                <view class="icon-small-wrp">
+                  <icon class="icon-small" type="cancel" size="23"></icon>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view style="height:100px" wx:if="{{images.length<9}}">
+          <view>
+            <image src="{{url}}" bindtap="chooseImage" style="width：50px;height:60px;margin-top:10px"></image>
+          </view>
+          <text class="addtex">添加图片</text>
+        </view>
+      </view>
+      <view>
+        <button bindtap="eatsubmit">
+          提交
+        </button>
+      </view>
+    </view>
+
+  </block>
+  <block>
+    <view class="detail" wx:if="{{current =='2'}}">
+      <view class="lun" wx:for="{{drinkList}}" wx:key="{{index}}">
+        <image class="lun" src="{{item.lun}}"></image>
+        <text bindtap="drinkdet" data-id="{{item._id}}">删除</text>
+      </view>
+      <view class="imgbox">
+        <!-- 存放上传的图片的盒子 -->
+        <block wx:for="{{images}}" wx:key="this">
+          <view class="add">
+            <!-- 图片缩略图  -->
+            <image src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+            <!-- 移除图片的按钮  -->
+            <view class="delete" data-idx="{{index}}" bindtap="removeImage">
+              <view class="icon-box">
+                <view class="icon-small-wrp">
+                  <icon class="icon-small" type="cancel" size="23"></icon>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view style="height:100px" wx:if="{{images.length<9}}">
+          <view>
+            <image src="{{url}}" bindtap="chooseImage" style="width：50px;height:60px;margin-top:10px"></image>
+          </view>
+          <text class="addtex">添加图片</text>
+        </view>
+      </view>
+      <view>
+        <button bindtap="drinksubmit">
+          提交
+        </button>
+      </view>
+    </view>
+
+  </block>
+
+</view>
+</block>

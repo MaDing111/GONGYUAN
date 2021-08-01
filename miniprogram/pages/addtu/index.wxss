@@ -1,0 +1,77 @@
+/* pages/addlun/index.wxss */
+.lun{
+  height: 100px;
+}
+text{
+  color: red;
+  border: 1px solid red;
+  font-size: 20px;
+}
+.imgbox{
+  width: 100%;
+  min-height: 200rpx;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+}
+.imgbox image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.add{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.delete{
+  font-size: 24rpx;
+  color: #E60000;
+}
+.addtex{
+ margin-left: 18px;
+  color: rgb(220, 219, 219);
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.nav{
+  width: 100%;
+  height: 100rpx;
+  background-color: skyblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.item{
+  font-size: 32rpx;
+  color: #fff;
+  height: 50rpx;
+  width: 100rpx;
+  line-height: 50rpx;
+  align-self: center;
+  text-align: center;
+}
+
+.active{
+  background-color: darkgray;
+  border-radius: 10rpx;
+}
+
+.list{
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+}
+.tenshen{
+  width: 100%;
+  text-align: center;
+  color: rgb(190, 188, 188);
+}
