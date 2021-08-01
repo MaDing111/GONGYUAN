@@ -1,0 +1,55 @@
+/* pages/lost/index.wxss */
+page {
+  font-size: 13px;
+}
+.content{
+  background-color: white;
+  padding: 0 10px;
+  
+
+}
+.header{
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+}
+.userimage{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.namedate{
+  margin-left: 10px;
+}
+.userimage image{
+  width: 40px;
+  height: 40px;
+}
+.images{
+  margin-top: 20px;
+}
+.body{
+  margin-top: 20px;
+  border-bottom: 1px solid #c6c6c6;
+}
+
+.footer{
+  margin-top: 20px;
+ 
+  margin-bottom: 20px;
+  
+}
+.foot{  width: 686rpx;  padding: 17rpx 32rpx;  background-color: #FFFFFF;  box-shadow:0rpx -1rpx 4rpx 0rpx rgba(0, 0, 0, 0.08);  position: fixed;  bottom: 0;  left: 0;}
+.say{  display: inline-block;  width: 360rpx;  padding: 20rpx 0rpx 10rpx 24rpx;  background-color: #F2F2F2;  border-radius: 8rpx;}
+.flex{  display: flex;  align-items: center;}
+.say_img{  width: 30rpx;  height: 30rpx;  margin-right: 13rpx;  /* vertical-align: 10rpx; */}
+.say_inp{  display: inline-block;  width: 300rpx;  height: 33rpx;}
+.say_place{  font-size: 28rpx;  color: #333333;}
+.foot_img{  width: 45rpx;  height: 40rpx;  margin-left: 50rpx;  margin-right: 17rpx;}
+.foot_num{  font-size: 24rpx;  vertical-align: 10rpx;}
+.foot_img2{  width: 40rpx;  height: 40rpx;  margin-left: 30rpx;  margin-right: 17rpx;}
+.userava{width: 30px;height: 30px;}
+.messages-one{
+  display: flex;
+  margin: 5px 0;
+}

@@ -1,0 +1,47 @@
+/* pages/school/index.wxss */
+page {
+  background: rgb(239, 239, 244);
+  font-size: 13px;
+}
+.content {
+  height: 100px;
+  width: 100%;
+  margin-top: 25px;
+}
+swiper {
+  height: 100px;
+  width: 100%;
+  border-radius: 5px;
+}
+swiper-item {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+.slide-image {
+  height: 100%;
+  width: 100%;
+}
+.area{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.area1{
+  margin-top:25px;
+}
+.area view{
+  /* float: left; */
+  background-color: white;
+  width: 60px;
+  height: 60px;
+}
+.area view image{
+  width: 60px;
+  height: 60px;
+}
+.smtex{
+width: 30px;
+text-align: center;
+}

@@ -1,0 +1,54 @@
+<block wx:if="{{canIUseGetUserProfile}}">
+  <view class="content">
+    <view class="userinfo">
+      <block class="blockk" mode="cover ">
+
+        <image class="userimage" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+
+        <view class="nname">
+          <text>{{userInfo.nickName}}</text>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{onoff}}" class="a1" bindtap="tomyadd">
+      <image src="cloud://cloud1-0gf5m759066b9527.636c-cloud1-0gf5m759066b9527-1306520679/images/list.png"></image>
+      <text>我的发布</text>
+      <view class="a2"></view>
+    </view>
+    <!-- <view class="a1" bindtap="tomywrite">
+      <image src="cloud://cloud1-0gf5m759066b9527.636c-cloud1-0gf5m759066b9527-1306520679/images/fans.png"></image>
+      <text>我的评论</text>
+      <view class="a2"></view>
+    </view> -->
+    <view class="a1" bindtap="tokefu">
+      <image src="cloud://cloud1-0gf5m759066b9527.636c-cloud1-0gf5m759066b9527-1306520679/images/shouji.png"></image>
+      <text>联系客服</text>
+      <view class="a2"></view>
+    </view>
+  </view>
+  <block wx:if="{{myself}}">
+    <view bindtap="addsclun" class="a1">
+      <text>校园轮播图</text>
+      <view class="a2"></view>
+    </view>
+    <view bindtap="addlun" class="a1">
+      <text>首页轮播</text>
+      <view class="a2"></view>
+    </view>
+    <view bindtap="addtu" class="a1">
+      <text>折扣/吃/喝</text>
+      <view class="a2"></view>
+    </view>
+    <view class="section section_gap">
+      <view class="body-view">
+        <switch checked="{{switch1Checked}}" bindchange="switch1Change" />
+      </view>
+    </view>
+  </block>
+
+</block>
+<block wx:else>
+  <view class="loginbutton">
+    <button bindtap="getUserProfile" style="primary"> 立即登录 </button>
+  </view>
+</block>

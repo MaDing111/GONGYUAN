@@ -1,0 +1,283 @@
+<view class="container">
+  <view class="nav">
+    <view class="item {{current == '0' ? 'active' : ''}}" catchtap="onClick" data-id="0">商品</view>
+    <view class="item {{current == '1' ? 'active' : ''}}" catchtap="onClick" data-id="1">失物</view>
+    <view class="item {{current == '2' ? 'active' : ''}}" catchtap="onClick" data-id="2">表白墙</view>
+    <view class="item {{current == '3' ? 'active' : ''}}" catchtap="onClick" data-id="3">拼车</view>
+    <view class="item {{current == '4' ? 'active' : ''}}" catchtap="onClick" data-id="4">跑腿</view>
+    <view class="item {{current == '5' ? 'active' : ''}}" catchtap="onClick" data-id="5">活动</view>
+  </view>
+  <view class="tenshen">
+  --向左滑动删除--
+  </view>
+  <view class="list">
+    <block>
+      <view class="detail" wx:if="{{current == '0'}}">
+        <view class="hotgoods">
+          <view class="onegood" wx:for="{{myList}}" wx:key="item">
+            <!-- 移动 -->
+            <movable-area>
+              <movable-view direction="horizontal" out-of-bounds>
+                <view class="heng">
+                  <view class="goodimage" data-sort="{{item.sort}}" data-id="{{item._id}}" data-ways="{{item.ways}}"
+                    bindtap="details">
+                    <image class="goodimage" src="{{item.images[0]}}"></image>
+                  </view>
+                  <view class="textt" data-sort="{{item.sort}}" data-id="{{item._id}}" data-ways="{{item.ways}}"
+                    bindtap="details">
+                    <view class="bigtexx">
+                      <text class="bigtex" style="flex: 1">{{item.title}}</text>
+                    </view>
+                    <view class="price">
+                      <text class="may" style="flex: 1">￥{{item.price}}</text>
+                      <text class="looked">{{item.rmcp}}人看过</text>
+                    </view>
+                    <view class="userara">
+                      <!-- item.avatarUrl -->
+                      <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+
+                      <text style="margin-left:10px;margin-top:5px">{{item.userInfo.nickName}}</text>
+                    </view>
+                    <!-- item.nickName -->
+                  </view>
+                  <view class="detile" data-id="{{item._id}}" data-ways="{{item.ways}}" bindtap="removeadd">
+                    删除
+                  </view>
+                </view>
+
+              </movable-view>
+            </movable-area>
+          </view>
+          <view class="onegood" wx:for="{{oldList}}" wx:key="item">
+            <!-- 移动 -->
+            <movable-area>
+              <movable-view direction="horizontal" out-of-bounds>
+
+                <view class="heng">
+
+                  <view class="goodimage" data-sort="{{item.sort}}" data-id="{{item._id}}" data-ways="{{item.ways}}"
+                    bindtap="details">
+                    <image class="goodimage" src="{{item.images[0]}}"></image>
+                  </view>
+                  <view class="textt" data-sort="{{item.sort}}" data-id="{{item._id}}" data-ways="{{item.ways}}"
+                    bindtap="details">
+                    <view class="bigtexx">
+                      <text class="bigtex" style="flex: 1">{{item.title}}</text>
+                    </view>
+                    <view class="price">
+                      <text class="may" style="flex: 1">￥{{item.price}}</text>
+                      <text class="looked">{{item.rmcp}}人看过</text>
+                    </view>
+                    <view class="userara">
+                      <!-- item.avatarUrl -->
+                      <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+
+                      <text style="margin-left:10px;margin-top:5px">{{item.userInfo.nickName}}</text>
+                    </view>
+                    <!-- item.nickName -->
+                  </view>
+                  <view class="detile" data-id="{{item._id}}" data-ways="{{item.ways}}" bindtap="removeadd">
+                    删除
+                  </view>
+                </view>
+
+              </movable-view>
+            </movable-area>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block>
+      <view class="detail" wx:if="{{current == '1'}}">
+        <view class="hotgoods">
+          <view class="onegood" wx:for="{{lostList}}" wx:key="item">
+            <!-- 移动 -->
+            <movable-area>
+              <movable-view direction="horizontal" out-of-bounds>
+                <view class="heng">
+                  <view class="goodimage" data-id="{{item._id}}">
+                    <image class="goodimage" src="{{item.images[0]}}"></image>
+                  </view>
+                  <view class="textt" data-id="{{item._id}}">
+                    <view class="bigtexx">
+                      <text class="bigtex" style="flex: 1">{{item.describe}}</text>
+                    </view>
+                    <view class="price">
+                      <text style="flex: 1">{{item.time}}</text>
+                      <text class="looked">{{item.zan}}人赞</text>
+                    </view>
+                    <view class="userara">
+                      <!-- item.avatarUrl -->
+                      <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+
+                      <text style="margin-left:10px;margin-top:5px">{{item.userInfo.nickName}}</text>
+                    </view>
+                    <!-- item.nickName -->
+                  </view>
+                  <view class="detile" data-id="{{item._id}}" bindtap="removelost">
+                    删除
+                  </view>
+                </view>
+
+              </movable-view>
+            </movable-area>
+          </view>
+        </view>
+      </view>
+
+  </block>
+  <block>
+    <view class="detail" wx:if="{{current =='2'}}">
+      <view class="hotgoods">
+        <view class="onegood" wx:for="{{loveList}}" wx:key="item">
+          <!-- 移动 -->
+          <movable-area>
+            <movable-view direction="horizontal" out-of-bounds>
+              <view class="heng">
+                <view class="goodimage" data-id="{{item._id}}">
+                  <image class="goodimage" src="{{item.images[0]}}"></image>
+                </view>
+                <view class="textt" data-id="{{item._id}}">
+                  <view class="bigtexx">
+                    <text class="bigtex" style="flex: 1">{{item.describe}}</text>
+                  </view>
+                  <view class="price">
+                    <text style="flex: 1">{{item.time}}</text>
+                    <text class="looked">{{item.zan}}人赞</text>
+                  </view>
+                  <view class="userara">
+                    <!-- item.avatarUrl -->
+                    <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+
+                    <text style="margin-left:10px;margin-top:5px">{{item.userInfo.nickName}}</text>
+                  </view>
+                  <!-- item.nickName -->
+                </view>
+                <view class="detile" data-id="{{item._id}}" bindtap="removelove">
+                  删除
+                </view>
+              </view>
+
+            </movable-view>
+          </movable-area>
+        </view>
+      </view>
+    </view>
+
+</block>
+<block>
+  <view class="detail" wx:if="{{current == '3'}}">
+    <view class="hotgoods">
+      <view class="onegood" wx:for="{{carList}}" wx:key="item">
+        <!-- 移动 -->
+        <movable-area>
+          <movable-view direction="horizontal" out-of-bounds>
+            <view class="heng">
+              <view class="goodimage" data-id="{{item._id}}">
+                <image class="goodimage" src="{{item.images[0]}}"></image>
+              </view>
+              <view class="textt" data-id="{{item._id}}">
+                <view class="bigtexx">
+                  <text class="bigtex" style="flex: 1">{{item.describe}}</text>
+                </view>
+                <view class="price">
+                  <text style="flex: 1">{{item.time}}</text>
+                  <text class="looked">{{item.zan}}人赞</text>
+                </view>
+                <view class="userara">
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+
+                  <text style="margin-left:10px;margin-top:5px">{{item.userInfo.nickName}}</text>
+                </view>
+                <!-- item.nickName -->
+              </view>
+              <view class="detile" data-id="{{item._id}}" bindtap="removecar">
+                删除
+              </view>
+            </view>
+
+          </movable-view>
+        </movable-area>
+      </view>
+    </view>
+  </view>
+</block>
+<block>
+  <view class="detail" wx:if="{{current == '4'}}">
+    <view class="hotgoods">
+      <view class="onegood" wx:for="{{runList}}" wx:key="item">
+        <!-- 移动 -->
+        <movable-area>
+          <movable-view direction="horizontal" out-of-bounds>
+            <view class="heng">
+              <view class="goodimage" data-id="{{item._id}}">
+                <image class="goodimage" src="{{item.images[0]}}"></image>
+              </view>
+              <view class="textt" data-id="{{item._id}}">
+                <view class="bigtexx">
+                  <text class="bigtex" style="flex: 1">{{item.describe}}</text>
+                </view>
+                <view class="price">
+                  <text style="flex: 1">{{item.time}}</text>
+                  <text class="looked">{{item.zan}}人赞</text>
+                </view>
+                <view class="userara">
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+
+                  <text style="margin-left:10px;margin-top:5px">{{item.userInfo.nickName}}</text>
+                </view>
+                <!-- item.nickName -->
+              </view>
+              <view class="detile" data-id="{{item._id}}" bindtap="removerun">
+                删除
+              </view>
+            </view>
+
+          </movable-view>
+        </movable-area>
+      </view>
+    </view>
+  </view>
+</block>
+<block>
+  <view class="detail" wx:if="{{current == '5'}}">
+    <view class="hotgoods">
+      <view class="onegood" wx:for="{{playList}}" wx:key="item">
+        <!-- 移动 -->
+        <movable-area>
+          <movable-view direction="horizontal" out-of-bounds>
+            <view class="heng">
+              <view class="goodimage" data-id="{{item._id}}">
+                <image class="goodimage" src="{{item.images[0]}}"></image>
+              </view>
+              <view class="textt" data-id="{{item._id}}">
+                <view class="bigtexx">
+                  <text class="bigtex" style="flex: 1">{{item.describe}}</text>
+                </view>
+                <view class="price">
+                  <text style="flex: 1">{{item.time}}</text>
+                  <text class="looked">{{item.zan}}人赞</text>
+                </view>
+                <view class="userara">
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+
+                  <text style="margin-left:10px;margin-top:5px">{{item.userInfo.nickName}}</text>
+                </view>
+                <!-- item.nickName -->
+              </view>
+              <view class="detile" data-id="{{item._id}}" bindtap="removeplay">
+                删除
+              </view>
+            </view>
+
+          </movable-view>
+        </movable-area>
+      </view>
+    </view>
+  </view>
+</block>
+</view>
+</view>

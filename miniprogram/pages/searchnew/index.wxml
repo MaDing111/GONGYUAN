@@ -1,0 +1,26 @@
+
+<view class="searchb">
+  <input class="sinput" type="text" confirm-type="search" placeholder="搜索.." auto-focus bindconfirm="search"/>
+</view>
+<view class="hotgoods" >
+    <view class="onegood" wx:for="{{searchList}}" wx:key="item" data-sort="{{item.sort}}" data-id="{{item._id}}" bindtap="details">
+      <image class="goodimage" src="{{item.images[0]}}"></image>
+      <view>
+        <text class="bigtex" style="flex: 1">{{item.title}}</text>
+      </view>
+      <view class="price">
+        <text class="may" style="flex: 1">￥{{item.price}}</text>
+        <text class="looked">{{item.rmcp}}人看过</text>
+      </view>
+      <view class="userara">
+                <view>
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="nam">
+                  <!-- item.nickName -->
+                  <text>{{item.userInfo.nickName}}</text>
+                </view>
+              </view>
+    </view>
+  </view>

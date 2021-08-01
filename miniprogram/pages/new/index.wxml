@@ -1,0 +1,163 @@
+<!--pages/old/index.wxml-->
+<view class="searchb">
+  <input class="sinput" type="text" confirm-type="search" placeholder="搜索.." bindfocus="tosearch"/>
+</view>
+<view class="tabChange">
+  <view class="tabTitle">
+    <view bindtap="clickTab" data-current="0" class="{{currentIndex==0?'active':''}}">全部商品</view>
+    <view bindtap="clickTab" data-current="1" class="{{currentIndex==1?'active':''}}">数码产品</view>
+    <view bindtap="clickTab" data-current="2" class="{{currentIndex==2?'active':''}}">学习类别</view>
+    <view bindtap="clickTab" data-current="3" class="{{currentIndex==3?'active':''}}">服饰妆品</view>
+    <view bindtap="clickTab" data-current="4" class="{{currentIndex==4?'active':''}}">其他</view>
+  </view>
+</view>
+<view class="tabContet">
+  <block wx:if="{{isLogin}}">
+    <swiper style="height:{{swiperheight}}px;" current="{{currentIndex}}" bindchange="swiperChange">
+      <swiper-item >
+        <view>
+          <view class="hotgoods">
+            <view class="onegood" wx:for="{{oldList}}" wx:key="item" bindtap="details" data-sort="{{item.sort}}" data-id="{{item._id}}">
+              <image class="goodimage" src="{{item.images[0]}}"></image>
+              <view>
+                <text class="bigtex" style="flex: 1">{{item.title}}</text>
+              </view>
+              <view class="price">
+                <text class="may" style="flex: 1">￥{{item.price}}</text>
+                <text class="looked">{{item.rmcp}}人看过</text>
+              </view>
+              <view class="userara">
+                <view>
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="nam">
+                  <!-- item.nickName -->
+                  <text>{{item.userInfo.nickName}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item >
+        <view>
+          <view class="hotgoods">
+            <view class="onegood" wx:for="{{oldList1}}" wx:key="item" bindtap="details" data-sort="{{item.sort}}" data-id="{{item._id}}">
+              <image class="goodimage" src="{{item.images[0]}}"></image>
+              <view>
+                <text class="bigtex" style="flex: 1">{{item.title}}</text>
+              </view>
+              <view class="price">
+                <text class="may" style="flex: 1">￥{{item.price}}</text>
+                <text class="looked">{{item.rmcp}}人看过</text>
+              </view>
+              <view class="userara">
+                <view>
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="nam">
+                  <!-- item.nickName -->
+                  <text>{{item.userInfo.nickName}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item >
+        <view>
+          <view class="hotgoods">
+            <view class="onegood" wx:for="{{oldList2}}" wx:key="item" bindtap="details" data-sort="{{item.sort}}" data-id="{{item._id}}">
+              <image class="goodimage" src="{{item.images[0]}}"></image>
+              <view>
+                <text class="bigtex" style="flex: 1">{{item.title}}</text>
+              </view>
+              <view class="price">
+                <text class="may" style="flex: 1">￥{{item.price}}</text>
+                <text class="looked">{{item.rmcp}}人看过</text>
+              </view>
+              <view class="userara">
+                <view>
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="nam">
+                  <!-- item.nickName -->
+                  <text>{{item.userInfo.nickName}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item >
+        <view>
+          <view class="hotgoods">
+            <view class="onegood" wx:for="{{oldList3}}" wx:key="item" bindtap="details" data-sort="{{item.sort}}" data-id="{{item._id}}">
+              <image class="goodimage" src="{{item.images[0]}}"></image>
+              <view>
+                <text class="bigtex" style="flex: 1">{{item.title}}</text>
+              </view>
+              <view class="price">
+                <text class="may" style="flex: 1">￥{{item.price}}</text>
+                <text class="looked">{{item.rmcp}}人看过</text>
+              </view>
+              <view class="userara">
+                <view>
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="nam">
+                  <!-- item.nickName -->
+                  <text>{{item.userInfo.nickName}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+      <swiper-item >
+        <view>
+          <view class="hotgoods">
+            <view class="onegood" wx:for="{{oldList4}}" wx:key="item" bindtap="details" data-sort="{{item.sort}}" data-id="{{item._id}}">
+              <image class="goodimage" src="{{item.images[0]}}"></image>
+              <view>
+                <text class="bigtex" style="flex: 1">{{item.title}}</text>
+              </view>
+              <view class="price">
+                <text class="may" style="flex: 1">￥{{item.price}}</text>
+                <text class="looked">{{item.rmcp}}人看过</text>
+              </view>
+              <view class="userara">
+                <view>
+                  <!-- item.avatarUrl -->
+                  <image class="ara" src="{{item.userInfo.avatarUrl}}"></image>
+                </view>
+                <view class="nam">
+                  <!-- item.nickName -->
+                  <text>{{item.userInfo.nickName}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </block>
+  <block wx:else>
+    <view><text>还没有登陆</text>
+    </view>
+
+  </block>
+</view>
+<block wx:if="{{onoff}}">
+  <movable-area class="movarea">
+    <movable-view class="moview" x="300px" y="500px" direction="all">
+      <view class="addbtn" bindtap="toaddcom">
+        <image src="../../images/add.png"></image>
+      </view>
+    </movable-view>
+  </movable-area>
+</block>

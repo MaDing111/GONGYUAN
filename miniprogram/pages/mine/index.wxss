@@ -1,0 +1,81 @@
+/* pages/mine/index.wxss */
+page{
+  font-size: 13px;
+}
+.content {
+  width: 93%;
+  margin: 0 auto;
+}
+
+.userinfo {
+  margin-bottom: 30px;
+}
+
+.userinfo button {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  translate: -50%;
+}
+
+.userimage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: 30px;
+}
+
+.blockk {
+  height: 60px;
+  width: 100%;
+  display: flex;
+
+}
+
+.nname {
+  margin-left: 10px;
+}
+
+.a1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(216, 213, 213);
+}
+
+.a1 text {
+  margin-bottom: 10px;
+  line-height: 40px;
+}
+
+.a1 image {
+  width: 17px;
+  height: 17px;
+  margin-right: 15px;
+}
+
+.a2 {
+  float:right;
+  width: 10px;
+  height: 10px;
+  border-right: rgb(216, 213, 213) solid 2px;
+  border-bottom: rgb(216, 213, 213) solid 2px;
+  transform:  rotate(-45deg);
+  margin-top: 10px;
+}
+.loginbutton{
+margin-top: 50%;
+}
+.addbtn image{
+  width: 50px;
+  height: 50px;
+}
+.movarea{
+width: 375px;
+height: 550px;
+}
+.moview{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  z-index: 999;
+}

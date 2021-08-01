@@ -1,0 +1,68 @@
+page {
+  background: rgb(239, 239, 244);
+  font-size: 13px;
+}
+.searchb {
+  width: 100%;
+  height: 50px;
+}
+.sinput {
+  background-color: white;
+  margin: 10px auto;
+  width: 95%;
+  height: 40px;
+  border-radius: 5px;
+}
+.hotgoods {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.onegood {
+  width: 48%;
+  height: 230px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.goodimage {
+  height: 150px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.price{
+  margin-top: 10px;
+  border-bottom: 1px solid rgb(219, 215, 215);
+  display: flex;
+  justify-content: space-between;
+}
+.bigtex{
+  margin-left: 8px;
+}
+.may{
+  color: red;
+  margin-left: 8px;
+  margin-bottom: 5px;
+}
+.looked{
+  color: rgb(204, 201, 201);
+  margin-right: 5px;
+  font-size: 12px;
+}
+.userara{
+  display: flex;
+  margin-left: 8px;
+}
+.nam{
+  margin-left: 5px;
+  margin-top: 4px;
+}
+.ara{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}

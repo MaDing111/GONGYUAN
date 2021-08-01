@@ -1,0 +1,36 @@
+<!--pages/school/index.wxml-->
+
+<view style="background:white;height:100%;width:100%">
+<view class="area">
+<view bindtap="tolost"><image src="{{icon1[1].icon}}"></image>
+<view class="smtex"><text>失物招领</text></view>
+</view>
+<view bindtap="toeat"><image src="{{icon1[2].icon}}"></image>
+  <view class="smtex"><text>吃点什么</text></view>
+</view>
+<view bindtap="tolove"><image src="{{icon1[0].icon}}"></image>
+  <view class="smtex"><text>表白墙</text></view>
+</view>
+</view>
+<view class="area area1">
+<view bindtap="toplay"><image src="{{icon2[1].icon}}"></image>
+  <view class="smtex"><text>什么活动</text></view>
+</view>
+<view bindtap="tocar"><image src="{{icon2[2].icon}}"></image>
+  <view class="smtex"><text>一起拼车</text></view>
+</view>
+<view bindtap="todrink"><image src="{{icon2[0].icon}}"></image>
+  <view class="smtex"><text>喝点什么</text></view>
+</view>
+</view>
+<view class="content">
+    <swiper circular="true" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" indicator-active-color="white"
+      duration="{{duration}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item.lun}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+</view>
