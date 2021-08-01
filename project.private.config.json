@@ -1,0 +1,30 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "pages/lostdetails/index",
+          "pathName": "pages/lostdetails/index",
+          "query": "id=cd045e75610140270091217543ada2fd",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
